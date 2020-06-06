@@ -7,7 +7,7 @@ module Whenever
     def run
       runner = JobRunner.new(params[:id])
       runner.run
-      redirect_to jobs_path, notice: t('.success', command: runner.command)
+      redirect_to jobs_path(success: true)
     end
   end
 end

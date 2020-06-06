@@ -4,28 +4,30 @@
       <%= t('whenever.cron_jobs') %>
     </div>
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th><%= t('whenever.task') %></th>
-        <th><%= t('whenever.interval') %></th>
-        <th><%= t('whenever.hour') %></th>
-        <th><%= t('whenever.roles') %></th>
-        <th><%= t('whenever.action') %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% job_list.each_with_index do |job, i| %>
-      <tr>
-        <td><%= job.description %></td>
-        <td><%= job.interval %></td>
-        <td><%= job.at %></td>
-        <td><%= job.roles %></td>
-        <td><%= link_to t('whenever.run_now'), run_job_path(i), class: 'btn btn-danger', title: job.output %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t('whenever.task') %></th>
+          <th><%= t('whenever.interval') %></th>
+          <th><%= t('whenever.hour') %></th>
+          <th><%= t('whenever.roles') %></th>
+          <th><%= t('whenever.action') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% job_list.each_with_index do |job, i| %>
+        <tr>
+          <td><%= job.description %></td>
+          <td><%= job.interval %></td>
+          <td><%= job.at %></td>
+          <td><%= job.roles %></td>
+          <td><%= link_to t('whenever.run_now'), run_job_path(i), class: 'btn btn-danger', title: job.output %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <% job_list.logs.each do |_, log| %>
 <div class="panel panel-default">
@@ -50,34 +52,36 @@
       <%= t('whenever.options') %>
     </div>
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th><%= t('whenever.settings') %></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% job_list.set_variables.each do |k, v| %>
-      <tr>
-        <td><%= k %></td>
-        <td><%= v %></td>
-      </tr>
-      <% end %>
-    <thead>
-      <tr>
-        <th><%= t('whenever.job_types') %></th>
-        <th></th>
-      </tr>
-    </thead>
-      <% job_list.job_types.each do |k, v| %>
-      <tr>
-        <td><%= k %></td>
-        <td><%= v %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t('whenever.settings') %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% job_list.set_variables.each do |k, v| %>
+        <tr>
+          <td><%= k %></td>
+          <td><%= v %></td>
+        </tr>
+        <% end %>
+      <thead>
+        <tr>
+          <th><%= t('whenever.job_types') %></th>
+          <th></th>
+        </tr>
+      </thead>
+        <% job_list.job_types.each do |k, v| %>
+        <tr>
+          <td><%= k %></td>
+          <td><%= v %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 <% if @crontab.present? %>
 <div class="panel panel-default">
@@ -86,8 +90,10 @@
       <%= t('whenever.cron_tab') %>
     </div>
   </div>
-  <pre>
-    <%= @crontab %>
-  </pre>
+  <div class="panel-body">
+    <pre>
+      <%= @crontab %>
+    </pre>
+  </div>
 </div>
 <% end %>

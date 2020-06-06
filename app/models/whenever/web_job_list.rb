@@ -9,9 +9,11 @@ module Whenever
 
     def web_jobs
       @web_jobs ||= begin
-        @jobs.flat_map do |interval, jobs|
-          jobs.map do |job|
-            WebJob.new(job, interval)
+        @jobs.flat_map.each do |mailto, extra_jobs|
+          extra_jobs.flat_map do |interval, jobs|
+            jobs.map do |job|
+              WebJob.new(job, interval)
+            end
           end
         end
       end
