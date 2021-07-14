@@ -1,0 +1,21 @@
+pl:
+  whenever:
+    logs:
+      clear:
+        success: "%{kind} logi wyczyszczone!"
+    jobs:
+      run:
+        success: "Uruchom zadanie: %{command}"
+    action: Akcja
+    cron_jobs: Zadania Cron
+    error_log: Błąd loga
+    hour: Godzina
+    interval: Interwał
+    roles: Rola
+    run_now: Uruchom
+    settings: Opcje
+    standard_log: Standardowy log
+    task: Zadanie
+    options: Opcje
+    job_types: Typy zadań
+    cron_tab: Tabela cron

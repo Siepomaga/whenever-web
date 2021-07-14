@@ -16,3 +16,6 @@ en:
     settings: Settings
     standard_log: Standard log
     task: Task
+    options: Options
+    job_types: Job types
+    cron_tab: Cron tab
