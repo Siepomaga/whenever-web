@@ -19,3 +19,43 @@ pl:
     options: Opcje
     job_types: Typy zadań
     cron_tab: Tabela cron
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: około godziny temu
+        other: około %{count} godzin
+      about_x_months:
+        one: około miesiąca temu
+        other: około %{count} miesięcy
+      about_x_years:
+        one: około rok temu
+        other: około %{count} lat
+      almost_x_years:
+        one: prawie rok temu
+        other: prawie %{count} lat
+      half_a_minute: pół minuty
+      less_than_x_seconds:
+        one: mniej niż sekundę
+        other: mniej niż %{count} sekundę
+      less_than_x_minutes:
+        one: mniej niż minutę
+        other: mniej niż %{count} minutę
+      over_x_years:
+        one: ponad rok temu
+        other: ponad %{count} lat
+      x_seconds:
+        one: 1 sekundę
+        other: "%{count} sekundę"
+      x_minutes:
+        one: 1 minutę
+        other: "%{count} minutę"
+      x_days:
+        one: 1 dzień
+        other: "%{count} dni"
+      x_months:
+        one: 1 miesiąc
+        other: "%{count} miesiące/y"
+      x_years:
+        one: 1 rok
+        other: "%{count} lat"
+
